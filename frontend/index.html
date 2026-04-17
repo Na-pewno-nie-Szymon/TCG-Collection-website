@@ -28,7 +28,7 @@
             padding: 40px 20px;
         }
 
-        /* --- NAWIGACJA --- */
+        /* NAWIGACJA */
         .tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
         .tab-btn {
             background: rgba(255, 255, 255, 0.1); color: white; padding: 12px 25px;
@@ -45,7 +45,7 @@
         .view-section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- NAGŁÓWEK --- */
+        /* NAGŁÓWEK */
         .header-container { text-align: center; max-width: 600px; margin: 0 auto 40px auto; }
         h1 {
             font-weight: 700; font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase;
@@ -53,20 +53,11 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;
         }
-        
-        /* NOWE: Styl dla wartości całej kolekcji */
         .total-value-badge {
-            font-size: 1.2rem;
-            background: rgba(76, 209, 55, 0.15);
-            color: var(--price-color);
-            padding: 5px 20px;
-            border-radius: 30px;
-            border: 1px solid rgba(76, 209, 55, 0.4);
-            text-transform: none;
-            letter-spacing: normal;
-            box-shadow: 0 0 15px rgba(76, 209, 55, 0.2);
+            font-size: 1.2rem; background: rgba(76, 209, 55, 0.15); color: var(--price-color);
+            padding: 5px 20px; border-radius: 30px; border: 1px solid rgba(76, 209, 55, 0.4);
+            text-transform: none; box-shadow: 0 0 15px rgba(76, 209, 55, 0.2);
         }
-
         .search-box {
             display: flex; gap: 10px; background: rgba(0, 0, 0, 0.2);
             padding: 10px; border-radius: 50px; border: 1px solid var(--card-border);
@@ -83,7 +74,7 @@
         }
         button.search-btn:hover { transform: scale(1.05); background: #ffde00; }
 
-        /* --- KARTY --- */
+        /* KARTY */
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
         .card {
             background: var(--card-bg); backdrop-filter: blur(10px);
@@ -96,9 +87,7 @@
         .card h3 { margin: 10px 0 5px 0; font-size: 1.2rem; }
         .card p { font-size: 0.85rem; color: #b3b3b3; margin-bottom: 10px; }
 
-        .card-badges {
-            display: flex; justify-content: center; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;
-        }
+        .card-badges { display: flex; justify-content: center; gap: 10px; margin-bottom: 15px; flex-wrap: wrap; }
         .badge {
             background: rgba(255, 255, 255, 0.08); padding: 4px 10px; border-radius: 20px;
             font-size: 0.75rem; font-weight: 600; border: 1px solid var(--card-border); letter-spacing: 0.5px;
@@ -115,24 +104,21 @@
         .remove-btn { border-color: #ff4757; color: #ff4757; }
         .remove-btn:hover { background: #ff4757; color: white; }
 
-        /* --- MODAL --- */
+        /* MODAL */
         .modal-overlay {
-            display: none; position: fixed; top: 0; left: 0;
-            width: 100%; height: 100%; background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(10px); z-index: 1000; align-items: center; justify-content: center;
-            opacity: 0; transition: opacity 0.3s ease;
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7); backdrop-filter: blur(10px); z-index: 1000;
+            align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;
         }
         .modal-overlay.active { display: flex; opacity: 1; }
-
         .modal-content {
             background: var(--glass-bg); border: 1px solid var(--card-border);
-            border-radius: 25px; width: 90%; max-width: 850px;
-            max-height: 90vh; padding: 40px; color: white;
-            position: relative; overflow-y: auto; display: flex; gap: 30px;
-            transform: scale(0.9); transition: transform 0.3s ease;
+            border-radius: 25px; width: 90%; max-width: 850px; max-height: 90vh;
+            padding: 40px; color: white; position: relative; overflow-y: auto;
+            display: flex; gap: 30px; transform: scale(0.9); transition: transform 0.3s ease;
         }
         .modal-overlay.active .modal-content { transform: scale(1); }
-        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 2rem; color: rgba(255,255,255,0.7); cursor: pointer; transition: color 0.3s; }
+        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 2rem; color: rgba(255,255,255,0.7); cursor: pointer; }
         .close-modal:hover { color: white; }
 
         .modal-left { flex: 1; text-align: center; }
@@ -149,8 +135,8 @@
         .meta-label { font-weight: 300; color: #b3b3b3; }
         .meta-value { font-weight: 600; color: #fff; }
         
-        .price-eu { color: var(--price-color); font-size: 1.1rem; text-shadow: 0 0 10px rgba(76, 209, 55, 0.4); }
-        .price-us { color: var(--price-color-alt); font-size: 1.1rem; text-shadow: 0 0 10px rgba(0, 210, 211, 0.4); }
+        .price-eu { color: var(--price-color); font-size: 1.1rem; }
+        .price-us { color: var(--price-color-alt); font-size: 1.1rem; }
 
         .flavor-text { font-style: italic; color: #ccc; font-weight: 300; font-size: 0.9rem; line-height: 1.5; border-top: 1px solid var(--card-border); padding-top: 15px; margin-top: auto; }
 
@@ -168,27 +154,27 @@
 <body>
 
     <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab('search')">🔍 Search</button>
-        <button class="tab-btn" onclick="switchTab('collection')">📚 Collection</button>
+        <button class="tab-btn active" onclick="switchTab('search')">🔍 Szukaj</button>
+        <button class="tab-btn" onclick="switchTab('collection')">📚 Kolekcja</button>
     </div>
 
     <div id="search-view" class="view-section active">
         <div class="header-container">
             <h1>Pokedex TCG</h1>
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Enter card name (e.g., Charizard)..." onkeypress="handleKeyPress(event)">
-                <button class="search-btn" onclick="searchCards()">Search</button>
+                <input type="text" id="searchInput" placeholder="Nazwa (Pikachu), kod (base1-4) lub nr (25)..." onkeypress="handleKeyPress(event)">
+                <button class="search-btn" onclick="searchCards()">Szukaj</button>
             </div>
         </div>
         <div class="grid" id="search-results">
-            <div class="status-message">Type a Pokémon name to search the database.</div>
+            <div class="status-message">Wpisz nazwę, aby przeszukać bazę.</div>
         </div>
     </div>
 
     <div id="collection-view" class="view-section">
         <div class="header-container">
-            <h1>Your Collection <span id="collectionTotal" class="total-value-badge">~ €0.00</span></h1>
-            <p style="color: rgba(255,255,255,0.7);">Cards saved in your digital binder.</p>
+            <h1>Twoja Kolekcja <span id="collectionTotal" class="total-value-badge">~ €0.00</span></h1>
+            <p style="color: rgba(255,255,255,0.7);">Karty zapisane w bazie danych na serwerze.</p>
         </div>
         <div class="grid" id="collection-grid"></div>
     </div>
@@ -204,14 +190,14 @@
                 <div class="modal-subinfo" id="modalSubInfo">Set • Supertype</div>
 
                 <div class="metadata-section">
-                    <h4>Card Details</h4>
+                    <h4>Szczegóły Karty</h4>
                     <div class="metadata-grid">
                         <div class="meta-item"><span class="meta-label">HP:</span> <span class="meta-value" id="modalHP"></span></div>
-                        <div class="meta-item"><span class="meta-label">Type:</span> <span class="meta-value" id="modalType"></span></div>
-                        <div class="meta-item"><span class="meta-label">Rarity:</span> <span class="meta-value" id="modalRarity"></span></div>
-                        <div class="meta-item"><span class="meta-label">Artist:</span> <span class="meta-value" id="modalArtist"></span></div>
-                        <div class="meta-item"><span class="meta-label">Price (EU):</span> <span class="meta-value price-eu" id="modalPriceEU"></span></div>
-                        <div class="meta-item"><span class="meta-label">Price (US):</span> <span class="meta-value price-us" id="modalPriceUS"></span></div>
+                        <div class="meta-item"><span class="meta-label">Typ:</span> <span class="meta-value" id="modalType"></span></div>
+                        <div class="meta-item"><span class="meta-label">Rzadkość:</span> <span class="meta-value" id="modalRarity"></span></div>
+                        <div class="meta-item"><span class="meta-label">Artysta:</span> <span class="meta-value" id="modalArtist"></span></div>
+                        <div class="meta-item"><span class="meta-label">Cena (EU):</span> <span class="meta-value price-eu" id="modalPriceEU"></span></div>
+                        <div class="meta-item"><span class="meta-label">Cena (US):</span> <span class="meta-value price-us" id="modalPriceUS"></span></div>
                     </div>
                 </div>
 
@@ -222,6 +208,7 @@
 
     <script>
         let viewedCards = [];
+        const API_BASE = "http://127.0.0.1:8000";
 
         function switchTab(tabName) {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -239,23 +226,18 @@
             } else if (card.tcgplayer && card.tcgplayer.prices) {
                 const prices = card.tcgplayer.prices;
                 const priceObj = prices.holofoil || prices.normal || prices.reverseHolofoil || Object.values(prices)[0];
-                if (priceObj && priceObj.market) {
-                    return `$${priceObj.market.toFixed(2)}`;
-                }
+                if (priceObj && priceObj.market) return `$${priceObj.market.toFixed(2)}`;
             }
             return "N/A";
         }
 
-        // NOWE: Funkcja pobierająca samą liczbę do zsumowania wartości kolekcji
         function getNumericPrice(card) {
             if (card.cardmarket && card.cardmarket.prices && card.cardmarket.prices.averageSellPrice) {
                 return card.cardmarket.prices.averageSellPrice;
             } else if (card.tcgplayer && card.tcgplayer.prices) {
                 const prices = card.tcgplayer.prices;
                 const priceObj = prices.holofoil || prices.normal || prices.reverseHolofoil || Object.values(prices)[0];
-                if (priceObj && priceObj.market) {
-                    return priceObj.market;
-                }
+                if (priceObj && priceObj.market) return priceObj.market;
             }
             return 0;
         }
@@ -265,10 +247,10 @@
             const resultsDiv = document.getElementById('search-results');
             if (!name) return;
 
-            resultsDiv.innerHTML = '<div class="loader"></div><div class="status-message">Scanning database...</div>';
+            resultsDiv.innerHTML = '<div class="loader"></div><div class="status-message">Skanowanie bazy...</div>';
 
             try {
-                const response = await fetch(`http://127.0.0.1:8000/search/${name}`);
+                const response = await fetch(`${API_BASE}/search/${encodeURIComponent(name)}`);
                 const data = await response.json();
                 resultsDiv.innerHTML = ''; 
 
@@ -276,7 +258,7 @@
                     data.data.forEach(card => {
                         if (!viewedCards.find(c => c.id === card.id)) viewedCards.push(card);
 
-                        const rarity = card.rarity ? card.rarity : "Common";
+                        const rarity = card.rarity ? card.rarity : "Zwykła";
                         const displayPrice = getPrimaryPrice(card);
                         
                         const cardElement = document.createElement('div');
@@ -294,26 +276,21 @@
                                 </div>
                             </div>
                             <button class="action-btn" onclick="event.stopPropagation(); addToCollection('${card.id}')">
-                                + Add to Collection
+                                + Dodaj do Kolekcji
                             </button>
                         `;
                         resultsDiv.appendChild(cardElement);
                     });
                 } else {
-                    resultsDiv.innerHTML = '<div class="status-message">No results found.</div>';
+                    resultsDiv.innerHTML = '<div class="status-message">Nic nie znaleziono.</div>';
                 }
             } catch (error) {
-                resultsDiv.innerHTML = `<div class="status-message" style="color:#ff6b6b;">FastAPI Server Error. Ensure backend is running.</div>`;
+                resultsDiv.innerHTML = `<div class="status-message" style="color:#ff6b6b;">Błąd serwera. Upewnij się, że FastAPI działa.</div>`;
             }
         }
 
         function openModal(cardId) {
             let cardData = viewedCards.find(c => c.id === cardId);
-            if (!cardData) {
-                const collection = JSON.parse(localStorage.getItem('my_tcg_collection')) || [];
-                cardData = collection.find(c => c.id === cardId);
-            }
-
             if (!cardData) return;
 
             document.getElementById('modalImage').src = cardData.images.large;
@@ -321,27 +298,23 @@
             document.getElementById('modalSubInfo').textContent = `${cardData.set.name} • ${cardData.supertype}`;
             
             document.getElementById('modalHP').textContent = cardData.hp || "N/A";
-            document.getElementById('modalType').textContent = cardData.types ? cardData.types.join(", ") : "Multi-type";
-            document.getElementById('modalRarity').textContent = cardData.rarity || "Common";
-            document.getElementById('modalArtist').textContent = cardData.artist || "Unknown";
+            document.getElementById('modalType').textContent = cardData.types ? cardData.types.join(", ") : "Wielotypowa";
+            document.getElementById('modalRarity').textContent = cardData.rarity || "Zwykła";
+            document.getElementById('modalArtist').textContent = cardData.artist || "Nieznany";
 
-            let priceEU = "N/A";
+            let priceEU = "N/A", priceUS = "N/A";
             if (cardData.cardmarket && cardData.cardmarket.prices && cardData.cardmarket.prices.averageSellPrice) {
                 priceEU = `€ ${cardData.cardmarket.prices.averageSellPrice.toFixed(2)}`;
             }
-            
-            let priceUS = "N/A";
             if (cardData.tcgplayer && cardData.tcgplayer.prices) {
                 const prices = cardData.tcgplayer.prices;
                 const priceObj = prices.holofoil || prices.normal || prices.reverseHolofoil || Object.values(prices)[0];
-                if (priceObj && priceObj.market) {
-                    priceUS = `$ ${priceObj.market.toFixed(2)}`;
-                }
+                if (priceObj && priceObj.market) priceUS = `$ ${priceObj.market.toFixed(2)}`;
             }
 
             document.getElementById('modalPriceEU').textContent = priceEU;
             document.getElementById('modalPriceUS').textContent = priceUS;
-            document.getElementById('modalFlavorText').textContent = cardData.flavorText || "No flavor text available for this card.";
+            document.getElementById('modalFlavorText').textContent = cardData.flavorText || "Brak opisu dla tej karty.";
 
             document.getElementById('cardModal').classList.add('active');
         }
@@ -349,74 +322,104 @@
         function closeModal() { document.getElementById('cardModal').classList.remove('active'); }
         function closeModalOnOverlay(event) { if (event.target.id === "cardModal") closeModal(); }
 
-        function addToCollection(cardId) {
-            let collection = JSON.parse(localStorage.getItem('my_tcg_collection')) || [];
-            if (collection.find(c => c.id === cardId)) { alert("You already have this card in your collection!"); return; }
-
+        // --- ZAPIS DO BAZY SQLITE ---
+        async function addToCollection(cardId) {
             const cardToAdd = viewedCards.find(c => c.id === cardId);
-            if (cardToAdd) {
-                collection.push(cardToAdd);
-                localStorage.setItem('my_tcg_collection', JSON.stringify(collection));
-                alert(`${cardToAdd.name} added to your collection.`);
+            if (!cardToAdd) return;
+
+            try {
+                const response = await fetch(`${API_BASE}/collection/add`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(cardToAdd)
+                });
+                const result = await response.json();
+                
+                if (result.status === "success") {
+                    alert(`Karta ${cardToAdd.name} zapisana w bazie!`);
+                    if (document.getElementById('collection-view').classList.contains('active')) {
+                        renderCollection(); // Odśwież kolekcję jeśli jesteś w tej zakładce
+                    }
+                } else {
+                    alert("Karta prawdopodobnie jest już w Twojej bazie!");
+                }
+            } catch (error) {
+                console.error("Błąd zapisu:", error);
+                alert("Błąd połączenia z bazą danych.");
             }
         }
 
-        function removeFromCollection(cardId) {
-            let collection = JSON.parse(localStorage.getItem('my_tcg_collection')) || [];
-            collection = collection.filter(c => c.id !== cardId);
-            localStorage.setItem('my_tcg_collection', JSON.stringify(collection));
-            renderCollection();
+        // --- USUWANIE Z BAZY SQLITE ---
+        async function removeFromCollection(cardId) {
+            try {
+                const response = await fetch(`${API_BASE}/collection/remove/${cardId}`, {
+                    method: 'DELETE'
+                });
+                const result = await response.json();
+                if (result.status === "success") {
+                    renderCollection();
+                }
+            } catch (error) {
+                console.error("Błąd usuwania:", error);
+            }
         }
 
-        function renderCollection() {
+        // --- ODCZYT Z BAZY SQLITE ---
+        async function renderCollection() {
             const collectionGrid = document.getElementById('collection-grid');
-            const totalElement = document.getElementById('collectionTotal'); // Pobranie licznika
-            const collection = JSON.parse(localStorage.getItem('my_tcg_collection')) || [];
-            
-            collectionGrid.innerHTML = '';
-            let totalValue = 0; // Zmienna do sumowania
-            
-            if (collection.length === 0) { 
-                collectionGrid.innerHTML = '<div class="status-message">Your collection is empty. Go find some cards!</div>'; 
-                totalElement.textContent = "~ €0.00";
-                return; 
-            }
+            const totalElement = document.getElementById('collectionTotal');
+            collectionGrid.innerHTML = '<div class="loader"></div>';
 
-            collection.forEach(card => {
-                if (!viewedCards.find(c => c.id === card.id)) viewedCards.push(card);
+            try {
+                const response = await fetch(`${API_BASE}/collection`);
+                const result = await response.json();
+                const collection = result.data || [];
+                
+                collectionGrid.innerHTML = '';
+                let totalValue = 0;
+                
+                if (collection.length === 0) { 
+                    collectionGrid.innerHTML = '<div class="status-message">Twoja baza danych jest pusta!</div>'; 
+                    totalElement.textContent = "~ €0.00";
+                    return; 
+                }
 
-                // Dodawanie ceny do ogólnej puli
-                totalValue += getNumericPrice(card);
+                collection.forEach(card => {
+                    // Dodaj do cache modala, żeby kliknięcie w zapisaną kartę działało
+                    if (!viewedCards.find(c => c.id === card.id)) viewedCards.push(card);
 
-                const rarity = card.rarity || "Common";
-                const displayPrice = getPrimaryPrice(card);
+                    totalValue += getNumericPrice(card);
 
-                const cardElement = document.createElement('div');
-                cardElement.className = 'card';
-                cardElement.setAttribute('onclick', `openModal('${card.id}')`);
+                    const rarity = card.rarity || "Zwykła";
+                    const displayPrice = getPrimaryPrice(card);
 
-                cardElement.innerHTML = `
-                    <div>
-                        <img src="${card.images.small}" alt="${card.name}">
-                        <h3>${card.name}</h3>
-                        <p>${card.set.name}</p>
-                        <div class="card-badges">
-                            <span class="badge rarity">${rarity}</span>
-                            <span class="badge price">${displayPrice}</span>
+                    const cardElement = document.createElement('div');
+                    cardElement.className = 'card';
+                    cardElement.setAttribute('onclick', `openModal('${card.id}')`);
+
+                    cardElement.innerHTML = `
+                        <div>
+                            <img src="${card.images.small}" alt="${card.name}">
+                            <h3>${card.name}</h3>
+                            <p>${card.set.name}</p>
+                            <div class="card-badges">
+                                <span class="badge rarity">${rarity}</span>
+                                <span class="badge price">${displayPrice}</span>
+                            </div>
                         </div>
-                    </div>
-                    <button class="action-btn remove-btn" onclick="event.stopPropagation(); removeFromCollection('${card.id}')">
-                        - Remove
-                    </button>
-                `;
-                collectionGrid.appendChild(cardElement);
-            });
+                        <button class="action-btn remove-btn" onclick="event.stopPropagation(); removeFromCollection('${card.id}')">
+                            - Usuń z bazy
+                        </button>
+                    `;
+                    collectionGrid.appendChild(cardElement);
+                });
 
-            // Aktualizacja HTML dla całkowitej wartości
-            totalElement.textContent = `~ €${totalValue.toFixed(2)}`;
+                totalElement.textContent = `~ €${totalValue.toFixed(2)}`;
+            } catch (error) {
+                collectionGrid.innerHTML = '<div class="status-message" style="color:red;">Nie można połączyć się z bazą danych.</div>';
+            }
         }
 
-        // Odpalenie renderCollection przy załadowaniu, by zaktualizować cenę, jeśli user wraca do aplikacji
         window.onload = () => {
             if (document.getElementById('collection-view').classList.contains('active')) {
                 renderCollection();

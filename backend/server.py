@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import requests
 import urllib.parse
+import json
+import sqlite3
 
 app = FastAPI()
 
@@ -12,6 +14,22 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+def init_db():
+    conn = sqlite3.connect('kolekcja.db')
+    c = conn.cursor()
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS cards (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            api_id TEXT UNIQUE,
+            card_data TEXT,
+            added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    ''')
+    conn.commit()
+    conn.close()
+
+init_db()
 
 # Mała funkcja pomocnicza: usuwa wiodące zera (np. "071" -> "71")
 def clean_number(val: str):
@@ -62,3 +80,29 @@ def search_card(query: str):
             return response.json()
         except Exception as e:
             return {"error": str(e)}
+        
+@app.get("/collection")
+def get_my_collection():
+    try:
+        conn = sqlite3.connect('kolekcja.db')
+        c = conn.cursor()
+        c.execute("SELECT card_data FROM collected_cards ORDER BY added_at DESC")
+        rows = c.fetchall()
+        conn.close()
+        
+        cards = [json.loads(row[0]) for row in rows]
+        return {"data": cards}
+    except Exception as e:
+        return {"error": str(e)}
+    
+@app.delete("/collection/remove/{api_id}")
+def remove_from_collection(api_id: str):
+    try:
+        conn = sqlite3.connect('kolekcja.db')
+        c = conn.cursor()
+        c.execute("DELETE FROM collected_cards WHERE api_id = ?", (api_id,))
+        conn.commit()
+        conn.close()
+        return {"status": "Card removed from collection"}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
